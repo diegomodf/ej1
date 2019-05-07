@@ -1,0 +1,58 @@
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.check{
+	margin-left: 30px;
+}
+
+.bloco{
+	padding: 5px 10px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    cursor: move;
+}
+
+.legenda1{
+	background-color: #DCDCDC;
+}
+
+.legenda2{
+	background-color: #FF6347;
+}
+
+.legenda3{
+	background-color: #00FFFF;
+}
+
+.legenda4{
+	background-color: #EE82EE;
+}
+
+.legenda5{
+	background-color: #32CD32;
+}
+
+.legenda6{
+	background-color: #FA8072;
+}
+
+.legenda7{
+	background-color: #FFD700;
+}
+
+.legenda8{
+	background-color: #FFA500;
+}
+
+.legenda9{
+	background-color: #87CEFA;
+}
