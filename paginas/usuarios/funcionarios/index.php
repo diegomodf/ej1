@@ -254,22 +254,55 @@
                   <div class="modal-body">
                     <div class="box">
                   <!-- /.box-header -->
-                      <form action="../../../sistema/php/apresentaDados/funcionario/alter.php" method="POST"> 
-                      <div class="box-body">
-                        <div class="row">
-                          <div class="form-group col-lg-12">
-                          <h5>Novo arquivo</h5>
-                              <input type="text" name= "nome" class="form-control" placeholder="ARQUIVO">
-                          </div>
-                    
-                        </div>
-                      </div>
-                    
-                      <div class="modal-footer">
-                        <input type="submit" class="btn btn-alert" value="Cancelar" name="submit">
-                        <input type="submit" class="btn btn-primary" value="Confirmar" name="submit">
-                      </div>
-
+                  <div class="col-md-9"> 
+                  <form action="../../../sistema/php/apresentaDados/funcionario/insert.php" method="POST" enctype="multipart/form-data">
+                    <form action="select.php">
+                    <div class="form-group">
+                      <h5>Nome do Cliente</h5>
+                        <select class="form-control" name="nome">
+                          <option value="">Selecione...</option>
+                            <?php 
+                              require_once('../../../sistema/php/conectaBd/index.php');
+                              $objDb = new db();
+                              $link = $objDb->conecta_mysql();
+                              $sql = " SELECT * FROM clientes";
+                              $resultado_ids = mysqli_query($link, $sql);
+                              if($resultado_ids){
+                              while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
+                              echo '<option value="'.$registros['nomeClientes'].'">'.$registros['nomeClientes'].'</option>';
+                                }
+                              }else{
+                                echo 'Erro na consulta dos emails no banco de dados!';
+                              }
+                            ?>
+                          </select>
+                              <h5>Nome do Funcionário</h5>
+                                <select class="form-control" name="nome">
+                                  <option value="">Selecione...</option>
+                                    <?php 
+                                      require_once('../../../sistema/php/conectaBd/index.php');
+                                      $objDb = new db();
+                                      $link = $objDb->conecta_mysql();
+                                      $sql = " SELECT * FROM funcionarios";
+                                      $resultado_ids = mysqli_query($link, $sql);
+                                      if($resultado_ids){
+                                      while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
+                                      echo '<option value="'.$registros['nomeFuncionarios'].'">'.$registros['nomeFuncionarios'].'</option>';
+                                        }
+                                      }else{
+                                        echo 'Erro na consulta dos funcionários no banco de dados!';
+                                      }
+                                    ?>
+                                </select>
+                              <div class="row">
+                                <div class="form-group col-lg-4">
+                                  <h5>Selecionar arquivo</h5>
+                                    <input type="file" name= "arquivo">
+                                </div>
+                                <div class="modal-footer">
+                                      <input type="submit" class="btn btn-alert" value="Cancelar" name="submit">
+                                      <input type="submit" class="btn btn-primary" value="Confirmar" name="submit">
+                                    </div>
                     </form>
                     </div>   
                   </div>
