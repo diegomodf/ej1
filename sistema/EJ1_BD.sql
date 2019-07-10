@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `EJ1_BD`.`DOU` (
   `nomeUltimoFuncionario` VARCHAR(45) NULL,
   `dataUpload` DATE NULL,
   `dataUpdate` DATE NULL,
+  `arquivo` VARCHAR(10000) NULL,
   PRIMARY KEY (`idDOU`))
 ENGINE = InnoDB;
 
