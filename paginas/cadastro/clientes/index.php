@@ -50,7 +50,7 @@
               <!-- /.box-tools -->
             </div> 
             <!-- /.box-header -->
-              <form action="../../../sistema/php/apresentaDados/funcionario/insert.php" method="POST">
+              <form action="../../../sistema/php/apresentaDados/clientes/insert.php" method="POST">
               <div class="box-body">
                 <div class="row">
                   <div class="form-group col-lg-6">
@@ -59,7 +59,7 @@
                   </div>
                   <div class="form-group col-lg-2">
                         <h5>CNPJ</h5>
-                    <input name="cpf" type="text" class="form-control" placeholder="CNPJ" OnKeyPress="formatar('##.###.###/####-##', this)" maxlength="14" onblur="TestaCPF(this)" >
+                    <input name="cnpj" type="text" class="form-control" placeholder="CNPJ" OnKeyPress="formatar('##.###.###/####-##', this)" maxlength="18" >
                   </div>
                 </div>
                 <div class="row">
@@ -76,6 +76,10 @@
                   <div class="form-group col-lg-4">
                   <h5>Endereço Completo</h5>
                     <input name="endereco" type="text" id="endereco" size="90" class="form-control" placeholder="Endereço Completo">
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <h5>Área de Atuação</h5>
+                      <input type="text" name= "areadeatuacao" class="form-control" placeholder="Área de Atuação" required>
                   </div>
                   <div class="form-group col-lg-6">
                     <h5>Senha</h5>

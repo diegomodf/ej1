@@ -59,21 +59,21 @@
                   </div>
                 </div>
                 <div class="row">
-                   <div class="form-group col-lg-4">
+                   <div class="form-group col-lg-6">
                       <h5>Email</h5>
                         <input type="email" name= "email" class="form-control" placeholder="Email" required>
                     </div>
-                <div class="form-group col-lg-6">
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-4">
                     <h5>Área de Atuação</h5>
                       <input type="text" name= "areadeatuacao" class="form-control" placeholder="Área de Atuação" required>
                   </div>
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-4">
                     <h5>Senha</h5>
                       <input type="password" name= "senha" class="form-control" placeholder="Senha" required>
                   </div>
-                <div class="form-group col-lg-3">
-                </div>
-                
+                <br>
               <div class="modal-footer">
                   <a href="../../usuarios/funcionarios/index.php">
                     <input type="cancel" class="btn btn-alert" value="Cancelar" name="submit">
