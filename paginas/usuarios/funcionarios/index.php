@@ -255,11 +255,11 @@
                     <div class="box">
                   <!-- /.box-header -->
                   <div class="col-md-9"> 
-                  <form action="../../../sistema/php/apresentaDados/funcionario/insert.php" method="POST" enctype="multipart/form-data">
+                  <form action="../../../sistema/php/apresentaDados/dou/insert.php" method="POST">
                     <form action="select.php">
                     <div class="form-group">
                       <h5>Nome do Cliente</h5>
-                        <select class="form-control" name="nome">
+                        <select class="form-control" name="nome_cliente">
                           <option value="">Selecione...</option>
                             <?php 
                               require_once('../../../sistema/php/conectaBd/index.php');
@@ -277,7 +277,7 @@
                             ?>
                           </select>
                               <h5>Nome do Funcionário</h5>
-                                <select class="form-control" name="nome">
+                                <select class="form-control" name="nome_func">
                                   <option value="">Selecione...</option>
                                     <?php 
                                       require_once('../../../sistema/php/conectaBd/index.php');
