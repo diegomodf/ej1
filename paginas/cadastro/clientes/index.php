@@ -54,25 +54,12 @@
               <div class="box-body">
                 <div class="row">
                   <div class="form-group col-lg-6">
-                  <h5>Nome do(a) Funcionário(a)</h5>
+                  <h5>Nome do(a) Cliente</h5>
                       <input type="text" name= "nome" class="form-control" placeholder="Nome" required>
                   </div>
                   <div class="form-group col-lg-2">
-                        <h5>Sexo</h5>
-                        <select class="form-control" name="sexo" id="sexo" required>
-                          <option value="">Selecione...</option>                      
-                          <option value="Feminino">Feminino</option>
-                          <option value="Masculino">Masculino</option>
-                          <option value="Outros">Outros</option>
-                        </select>
-                  </div>
-                  <div class="form-group col-lg-2">
-                        <h5>Data de Nascimento</h5>
-                        <input type="text" name= "nascimento" class="form-control" placeholder="Data de Nascimento" OnKeyPress="formatar('##/##/####', this)" maxlength="10" required>
-                  </div>
-                  <div class="form-group col-lg-2">
-                        <h5>CPF</h5>
-                    <input name="cpf" type="text" class="form-control" placeholder="CPF" OnKeyPress="formatar('###.###.###-##', this)" maxlength="14" required onblur="TestaCPF(this)" >
+                        <h5>CNPJ</h5>
+                    <input name="cpf" type="text" class="form-control" placeholder="CNPJ" OnKeyPress="formatar('##.###.###/####-##', this)" maxlength="14" onblur="TestaCPF(this)" >
                   </div>
                 </div>
                 <div class="row">
@@ -82,56 +69,22 @@
                   </div>
                   <div class="form-group col-lg-3">
                   <h5>Telefone</h5>
-                    <input name="telefone" type="text" class="form-control" placeholder="Telefone" OnKeyPress="formatar('##-#####-####', this)" maxlength="13" required>
-                  </div>
-                  <div class="form-group col-lg-3">
-                  <h5>Função</h5>
-                    <select class="form-control" name="funcao" id="funcao" required>
-                          <option value="">Selecione...</option>                      
-                          <option value="1">Funcionário(a) da Limpeza</option>
-                          <option value="2">Gerente</option>
-                          <option value="3">Terapeuta</option>
-                          <option value="4">Secretário(a)</option>
-                        </select>
-                  </div>
-                  <div class="form-group col-lg-2">
-                  <h5>Data de Ingresso</h5>
-                      <input type="text" name= "ingresso" class="form-control" placeholder="Data de Ingresso" OnKeyPress="formatar('##/##/####', this)" maxlength="10" required>
+                    <input name="telefone" type="text" class="form-control" placeholder="Telefone" OnKeyPress="formatar('## #####-####', this)" maxlength="13" required>
                   </div>
               </div>
                 <div class="row">
                   <div class="form-group col-lg-4">
-                  <h5>CEP</h5>
-                    <input name="cep" type="text" id="cep" value="" size="60" maxlength="8" onblur="pesquisacep(this.value);" class="form-control" placeholder="CEP" required/>
+                  <h5>Endereço Completo</h5>
+                    <input name="endereco" type="text" id="endereco" size="90" class="form-control" placeholder="Endereço Completo">
                   </div>
-                  <div class="form-group col-lg-4">
-                  <h5>Rua</h5>
-                    <input name="rua" type="text" id="rua" size="60" class="form-control" placeholder="Rua">
-                  </div>
-                  <div class="form-group col-lg-4">
-                    <h5>Número</h5>
-                    <input type="text" name= "numero" class="form-control" placeholder="Número" required>
-                  </div>
-                  <div class="form-group col-lg-3">
-                    <h5>Complemento</h5>
-                    <input type="text" name= "complemento" class="form-control" placeholder="Complemento">
-                  </div>
-                  <div class="form-group col-lg-3">
-                  <h5>Bairro</h5>
-                    <input name="bairro" type="text" id="bairro" size="60" class="form-control" placeholder="Bairro">
-                  </div>
-                  <div class="form-group col-lg-3">
-                  <h5>Cidade</h5>
-                    <input name="cidade" type="text" id="cidade" size="60" class="form-control" placeholder="Cidade">
-                  </div>
-                  <div class="form-group col-lg-3">
-                  <h5>Unidade da Federação</h5>
-                    <input name="uf" type="text" id="uf" size="60" class="form-control" placeholder="UF">
+                  <div class="form-group col-lg-6">
+                    <h5>Senha</h5>
+                      <input type="password" name= "senha" class="form-control" placeholder="Senha" required>
                   </div>
               </div>
               
               <div class="modal-footer">
-                  <a href="../../usuarios/funcionarios/index.php">
+                  <a href="../../usuarios/clientes/index.php">
                     <input type="cancel" class="btn btn-alert" value="Cancelar" name="submit">
                   </a>
 
@@ -153,6 +106,19 @@
 <!-- ./wrapper -->
 
 <?php include '../../arquivos-include/jquery.php';?>
+
+<script>
+    function formatar(mascara, documento){
+      var i = documento.value.length;
+      var saida = mascara.substring(0,1);
+      var texto = mascara.substring(i)
+      
+      if (texto.substring(0,1) != saida){
+                documento.value += texto.substring(0,1);
+      }
+      
+    }
+</script>
 
 <script>
 function TestaCPF(elemento) {
