@@ -25,7 +25,7 @@
                     <h3>Plataforma Strategos</h3>
                     <div class="col-md-12">
                             <a href="index.php"><button type="button" class="btn btn-secondary btn-sm">Área do Cliente</button></a>
-                            <a href="index_profissionais.php"><button type="button" class="btn btn-info btn-sm">Área do Profissional</button><br><br></a>
+                            <a href="index_funcionarios.php"><button type="button" class="btn btn-info btn-sm">Área do Funcionário</button><br><br></a>
                     <div class="form-group">
                         <input type="email" class="form-control" id="name" name="email" placeholder="E-mail" />
                     </div>
