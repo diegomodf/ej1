@@ -4,11 +4,13 @@
 
     require_once('../conectaBd/index.php'); 
 
+
+
     $email = $_POST['email'];
     $senha = $_POST['senha'];
      
 
-    $sql = "SELECT * FROM `funcionarios` WHERE email = '$email' AND senha = '$senha'";
+    $sql = "SELECT * FROM `clientes` WHERE email = '$email' AND senha = '$senha'";
 
     $objDb = new db();
     $link = $objDb->conecta_mysql();
@@ -21,9 +23,9 @@
         if(isset($dados_usuario['email'])){
             $_SESSION['email'] = $dados_usuario['email'];
             $_SESSION['nome'] = $dados_usuario['nome'];
-            header('Location: ../../paginas/usuarios/funcionarios/index.php');
+            header('Location: ../../../paginas/usuarios/funcionarios');
         }else{
-            header('Location: ../../../index.php?erro=1');
+            header('Location: ../../../index_funcionarios.php?erro=1');
         }
     }else{
         echo "Erro na execução da consulta, favor entrar em contato com o admin do site";
