@@ -5,13 +5,8 @@ class db{
     private $host ='localhost';
     private $usuario ='root';
     private $senha ='';
-    private $database ='clifops_teste';
-    
-    //localhost
-    //clifopsc_clifops
-    //ges2018@)!*    
-    //clifopsc_wp610    
-    
+    private $database ='ej1_bd';
+     
     public function conecta_mysql(){
         //Cria conexão
         $con = mysqli_connect($this->host, $this->usuario, $this->senha, $this->database);
