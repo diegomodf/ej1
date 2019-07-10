@@ -54,51 +54,25 @@
               <div class="box-body">
                 <div class="row">
                   <div class="form-group col-lg-6">
-                  <h5>Nome do(a) Funcionário(a)</h5>
+                    <h5>Nome do(a) Funcionário(a)</h5>
                       <input type="text" name= "nome" class="form-control" placeholder="Nome" required>
-                  </div>
-                  <div class="form-group col-lg-2">
-                        <h5>Sexo</h5>
-                        <select class="form-control" name="sexo" id="sexo" required>
-                          <option value="">Selecione...</option>                      
-                          <option value="Feminino">Feminino</option>
-                          <option value="Masculino">Masculino</option>
-                          <option value="Outros">Outros</option>
-                        </select>
-                  </div>
-                  <div class="form-group col-lg-2">
-                        <h5>Data de Nascimento</h5>
-                        <input type="text" name= "nascimento" class="form-control" placeholder="Data de Nascimento" OnKeyPress="formatar('##/##/####', this)" maxlength="10" required>
-                  </div>
-                  <div class="form-group col-lg-2">
-                        <h5>CPF</h5>
-                    <input name="cpf" type="text" class="form-control" placeholder="CPF" OnKeyPress="formatar('###.###.###-##', this)" maxlength="14" required onblur="TestaCPF(this)" >
                   </div>
                 </div>
                 <div class="row">
                    <div class="form-group col-lg-4">
-                  <h5>Email</h5>
-                      <input type="email" name= "email" class="form-control" placeholder="Email" required>
+                      <h5>Email</h5>
+                        <input type="email" name= "email" class="form-control" placeholder="Email" required>
+                    </div>
+                <div class="form-group col-lg-6">
+                    <h5>Área de Atuação</h5>
+                      <input type="text" name= "areadeatuacao" class="form-control" placeholder="Área de Atuação" required>
                   </div>
-                  <div class="form-group col-lg-3">
-                  <h5>Telefone</h5>
-                    <input name="telefone" type="text" class="form-control" placeholder="Telefone" OnKeyPress="formatar('##-#####-####', this)" maxlength="13" required>
+                <div class="form-group col-lg-6">
+                    <h5>Senha</h5>
+                      <input type="password" name= "senha" class="form-control" placeholder="Senha" required>
                   </div>
-                  <div class="form-group col-lg-3">
-                  <h5>Função</h5>
-                    <select class="form-control" name="funcao" id="funcao" required>
-                          <option value="">Selecione...</option>                      
-                          <option value="1">Funcionário(a) da Limpeza</option>
-                          <option value="2">Gerente</option>
-                          <option value="3">Terapeuta</option>
-                          <option value="4">Secretário(a)</option>
-                        </select>
-                  </div>
-                  <div class="form-group col-lg-2">
-                  <h5>Data de Ingresso</h5>
-                      <input type="text" name= "ingresso" class="form-control" placeholder="Data de Ingresso" OnKeyPress="formatar('##/##/####', this)" maxlength="10" required>
-                  </div>
-              </div>
+                <div class="form-group col-lg-3">
+                </div>
                 
               <div class="modal-footer">
                   <a href="../../usuarios/funcionarios/index.php">
