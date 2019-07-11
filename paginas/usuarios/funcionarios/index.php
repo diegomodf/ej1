@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['nome']) || !isset($_SESSION['email'])){
+        header('Location: ../../../index.php?erro=1');    
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +13,15 @@
     
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
-<?php include '../../arquivos-include/menu.php';?>    
+<?php
+  if(!isset($_SESSION['cliente'])){
+    include '../../arquivos-include/menu.php';
+  }
+  else{
+    include '../../arquivos-include/menu_cliente.php';
+  }
+  
+?>   
   <!-- CORPO DA PÁGINA DO PROJETO!!! -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

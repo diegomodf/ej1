@@ -18,7 +18,8 @@
             if(isset($dados_usuario['emailClientes'])){
                 $_SESSION['email'] = $dados_usuario['emailClientes'];
                 $_SESSION['nome'] = $dados_usuario['nomeClientes'];
-                header('Location: ../../../paginas/usuarios/funcionarios');
+                $_SESSION['cliente'] = $dados_usuario['nomeClientes'];
+                header('Location: ../../../paginas/dou/dou');
             }else{
                 header('Location: ../../../index.php?erro=1');
             }

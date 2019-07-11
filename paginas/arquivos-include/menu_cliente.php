@@ -72,8 +72,6 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li><a href="../../usuarios/clientes/index.php"><i class="fa fa-user"></i> <span>Clientes</span></a></li>
-      <li><a href="../../usuarios/funcionarios/index.php"><i class="fa fa-home"></i> <span>Funcionários</span></a></li>
       <li><a href="../../dou/dou/index.php"><i class="fa fa-book"></i> <span>Leituras do DOU</span></a></li>        
           
     </ul>

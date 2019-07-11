@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['nome']) || !isset($_SESSION['email'])){
+        header('Location: ../../../index.php?erro=1');    
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +13,15 @@
     
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
-<?php include '../../arquivos-include/menu.php';?>    
+<?php
+  if(!isset($_SESSION['cliente'])){
+    include '../../arquivos-include/menu.php';
+  }
+  else{
+    include '../../arquivos-include/menu_cliente.php';
+  }
+  
+?>    
   <!-- CORPO DA PÁGINA DO PROJETO!!! -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -21,11 +35,11 @@
   <section class="content container-fluid">
               <div class="box">
                 <div class="box-header with-border" style="padding:15px;">
-                <div class="box-tools pull-right">
-                  <a href="../../cadastro/dou/index.php"><button class="btn btn-success">Incluir nova leitura</button></a>
-                  <!-- /.box-tools -->
-                </div>
-                  <h3 class="box-title">Editar Cadastro de Clientes</h3>
+                <?php 
+                if(!isset($_SESSION['cliente']))
+                  echo "<div class=\"box-tools pull-right\"><a href=\"../../cadastro/dou/index.php\"><button class=\"btn btn-success\">Incluir nova leitura</button></a></div>";
+                ?>
+                  <h3 class="box-title">Leituras do DOU</h3>
                   <div class="box-body">
                   
                     <table id="tabela" class="table table-bordered table-striped">
@@ -43,41 +57,82 @@
                         require_once('../../../sistema/php/conectaBd/index.php');
                         $objDb = new db();
                         $link = $objDb->conecta_mysql();
-                        $sql = " SELECT * FROM DOU";
-                        $resultado_ids = mysqli_query($link, $sql);
-                        if($resultado_ids){
-                          while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
-                            $id = $registros['idDOU'];
-                            $id_cliente = $registros['idCliente'];
-                            $id_funcionario = $registros['idFuncionario'];
-                            $id_ultimo_funcionario = $registros['idUltimoFuncionario'];
-                            $data = $registros['dataUpload'];
-                            $date=date_create("$data");
-                            $data = date_format($date,"d/m/Y");
-                            $nome_cliente = $registros['nomeCliente'];
-                            $nome_funcionario = $registros['nomeFuncionario'];
-                            echo '<tr>';
-                            echo "<td>".$data."</td>";
-                            echo '<td>'.$nome_cliente.'</td>';
-                            echo '<td>'.$nome_funcionario.'</td>';
-                            ?>
-                            <td>
-                              <div class='item_lista'>
-                                <a href="../../../sistema/php/apresentaDados/dou/uploads/<?php echo $registros['arquivo']; ?>" target="_blank" style="color:black"><span class="fa fa-eye item_lista"></span></a>
-                              </div>
-                            </td>
-                            <td>
-                              <div class='item_lista'>
-                                <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario'];?>">
-                                </span>
-                              </div>
-                            </td>
-                            
-                            <?php
-                            echo '</tr>';
+                        if(!isset($_SESSION['cliente'])){
+                          $sql = " SELECT * FROM DOU";
+                          $resultado_ids = mysqli_query($link, $sql);
+                          if($resultado_ids){
+                            while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
+                              $id = $registros['idDOU'];
+                              $id_cliente = $registros['idCliente'];
+                              $id_funcionario = $registros['idFuncionario'];
+                              $id_ultimo_funcionario = $registros['idUltimoFuncionario'];
+                              $data = $registros['dataUpload'];
+                              $date=date_create("$data");
+                              $data = date_format($date,"d/m/Y");
+                              $nome_cliente = $registros['nomeCliente'];
+                              $nome_funcionario = $registros['nomeFuncionario'];
+                              echo '<tr>';
+                              echo "<td>".$data."</td>";
+                              echo '<td>'.$nome_cliente.'</td>';
+                              echo '<td>'.$nome_funcionario.'</td>';
+                              ?>
+                              <td>
+                                <div class='item_lista'>
+                                  <a href="../../../sistema/php/apresentaDados/dou/uploads/<?php echo $registros['arquivo']; ?>" target="_blank" style="color:black"><span class="fa fa-eye item_lista"></span></a>
+                                </div>
+                              </td>
+                              <td>
+                                <div class='item_lista'>
+                                  <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario'];?>">
+                                  </span>
+                                </div>
+                              </td>
+                              
+                              <?php
+                              echo '</tr>';
+                            }
+                          }else{
+                            echo 'Erro na consulta dos emails no banco de dados!';
                           }
-                        }else{
-                          echo 'Erro na consulta dos emails no banco de dados!';
+                        }
+                        else{
+                          $cliente = $_SESSION['cliente'];
+                          $sql = " SELECT * FROM `DOU` WHERE `nomeCliente` = '$cliente'";
+                          $resultado_ids = mysqli_query($link, $sql);
+                          if($resultado_ids){
+                            while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
+                              $id = $registros['idDOU'];
+                              $id_cliente = $registros['idCliente'];
+                              $id_funcionario = $registros['idFuncionario'];
+                              $id_ultimo_funcionario = $registros['idUltimoFuncionario'];
+                              $data = $registros['dataUpload'];
+                              $date=date_create("$data");
+                              $data = date_format($date,"d/m/Y");
+                              $nome_cliente = $registros['nomeCliente'];
+                              $nome_funcionario = $registros['nomeFuncionario'];
+                              echo '<tr>';
+                              echo "<td>".$data."</td>";
+                              echo '<td>'.$nome_cliente.'</td>';
+                              echo '<td>'.$nome_funcionario.'</td>';
+                              ?>
+                              <td>
+                                <div class='item_lista'>
+                                  <a href="../../../sistema/php/apresentaDados/dou/uploads/<?php echo $registros['arquivo']; ?>" target="_blank" style="color:black"><span class="fa fa-eye item_lista"></span></a>
+                                </div>
+                              </td>
+                              <td>
+                                <div class='item_lista'>
+                                  <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario'];?>">
+                                  </span>
+                                </div>
+                              </td>
+                              
+                              <?php
+                              echo '</tr>';
+                            }
+                          }else{
+                            echo 'Erro na consulta dos emails no banco de dados!';
+                          }
                         }
                         ?>
                       </tbody>

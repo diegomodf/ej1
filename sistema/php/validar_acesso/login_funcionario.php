@@ -12,15 +12,14 @@
 
     $sql = "SELECT * FROM `Funcionarios` WHERE `emailFuncionarios` = '$email' AND `senhaFuncionarios` = '$senha';";
     $resultado = mysqli_query($link, $sql);
-    
     if($resultado){
         while($dados_usuario = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-            if(isset($dados_usuario['emailClientes'])){
+            if(isset($dados_usuario['emailFuncionarios'])){
                 $_SESSION['email'] = $dados_usuario['emailFuncionarios'];
                 $_SESSION['nome'] = $dados_usuario['nomeFuncionarios'];
-                header('Location: ../../../paginas/usuarios/funcionarios');
+                header('Location: ../../../paginas/dou/dou');
             }else{
-                header('Location: ../../../index_funcionarios.php?erro=1');
+                //header('Location: ../../../index_funcionarios.php?erro=1');
             }
         }
     }else{

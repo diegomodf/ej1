@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['nome']) || !isset($_SESSION['email']) || !isset($_SESSION['funcao'])){
+    if(!isset($_SESSION['nome']) || !isset($_SESSION['email'])){
         header('Location: ../../../index.php?erro=1');    
     }
 ?>
