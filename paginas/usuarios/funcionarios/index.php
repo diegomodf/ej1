@@ -252,12 +252,12 @@
                     <h4 class="modal-title">Adicionar Leitura</h4>
                   </div>
                   <div class="modal-body">
-                    <div class="box">
+                  <div class="box">
                   <!-- /.box-header -->
-                  <div class="col-md-9"> 
+                  <div class="col-xl-9"> 
+                  <div class="form-group">
                   <form action="../../../sistema/php/apresentaDados/dou/insert.php" method="POST">
                     <form action="select.php">
-                    <div class="form-group">
                       <h5>Nome do Cliente</h5>
                         <select class="form-control" name="nome_cliente">
                           <option value="">Selecione...</option>
@@ -275,40 +275,42 @@
                                 echo 'Erro na consulta dos emails no banco de dados!';
                               }
                             ?>
+                        </select>
+                        <h5>Nome do Funcionário</h5>
+                        <select class="form-control" name="nome_func">
+                          <option value="">Selecione...</option>
+                            <?php 
+                              require_once('../../../sistema/php/conectaBd/index.php');
+                              $objDb = new db();
+                              $link = $objDb->conecta_mysql();
+                              $sql = " SELECT * FROM funcionarios";
+                              $resultado_ids = mysqli_query($link, $sql);
+                              if($resultado_ids){
+                                while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
+                                  echo '<option value="'.$registros['nomeFuncionarios'].'">'.$registros['nomeFuncionarios'].'</option>';
+                                }
+                              }else{
+                                echo 'Erro na consulta dos funcionários no banco de dados!';
+                              }
+                              ?>
                           </select>
-                              <h5>Nome do Funcionário</h5>
-                                <select class="form-control" name="nome_func">
-                                  <option value="">Selecione...</option>
-                                    <?php 
-                                      require_once('../../../sistema/php/conectaBd/index.php');
-                                      $objDb = new db();
-                                      $link = $objDb->conecta_mysql();
-                                      $sql = " SELECT * FROM funcionarios";
-                                      $resultado_ids = mysqli_query($link, $sql);
-                                      if($resultado_ids){
-                                      while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
-                                      echo '<option value="'.$registros['nomeFuncionarios'].'">'.$registros['nomeFuncionarios'].'</option>';
-                                        }
-                                      }else{
-                                        echo 'Erro na consulta dos funcionários no banco de dados!';
-                                      }
-                                    ?>
-                                </select>
-                              <div class="row">
-                                <div class="form-group col-lg-4">
-                                  <h5>Selecionar arquivo</h5>
-                                    <input type="file" name= "arquivo">
-                                </div>
-                                <div class="modal-footer">
-                                      <input type="submit" class="btn btn-alert" value="Cancelar" name="submit">
-                                      <input type="submit" class="btn btn-primary" value="Confirmar" name="submit">
-                                    </div>
+                          <div class="row">
+                            <div class="form-group col-lg-4">
+                              <h5>Selecionar arquivo</h5>
+                                <input type="file" name= "arquivo">
+                            </div>
+                            <div class="modal-footer">
+                              <input type="submit" class="btn btn-alert" value="Cancelar" name="submit">
+                              <input type="submit" class="btn btn-primary" value="Confirmar" name="submit">
+                            </div>
+                          </div> 
                     </form>
-                    </div>   
+                    </form> 
                   </div>
-                  
+                  </div>
+                  </div>
                 </div>
-                  
+                </div>
               </div>
                 
             </div>
