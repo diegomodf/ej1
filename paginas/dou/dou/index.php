@@ -13,23 +13,28 @@
     <!-- Content Header (Page header) -->
     
 
-    <section class="content container-fluid">
+
+
+
+
+  <!-- COLO OS ARQUIVOS DA PÁGINA DO PROJETO AQUI!!! -->
+  <section class="content container-fluid">
               <div class="box">
                 <div class="box-header with-border" style="padding:15px;">
+                <div class="box-tools pull-right">
+                  <a href="../../cadastro/dou/index.php"><button class="btn btn-success">Incluir nova leitura</button></a>
+                  <!-- /.box-tools -->
+                </div>
                   <h3 class="box-title">Editar Cadastro de Clientes</h3>
-                  <div class="box-tools pull-right">
-                    <a href="../../cadastro/clientes/index.php"><button class="btn btn-success">Cadastrar Novo(a) Cliente</button></a>
-                    <!-- /.box-tools -->
-                  </div>
                   <div class="box-body">
+                  
                     <table id="tabela" class="table table-bordered table-striped">
                       <thead>
                         <tr>
-                          <th>Nome</th>
-                          <th>E-mail</th>
-                          <th>Telefone</th>
-                          <th>Área de atuação</th>
-                          <th>Visualizar</th>
+                          <th>Data</th>
+                          <th>Cliente</th>
+                          <th>Funcionário</th>
+                          <th>Baixar</th>
                           <th>Editar</th>
                         </tr>
                       </thead>
@@ -38,25 +43,27 @@
                         require_once('../../../sistema/php/conectaBd/index.php');
                         $objDb = new db();
                         $link = $objDb->conecta_mysql();
-                        $sql = " SELECT * FROM Clientes";
+                        $sql = " SELECT * FROM DOU";
                         $resultado_ids = mysqli_query($link, $sql);
                         if($resultado_ids){
                           while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
-                            $id = $registros['idClientes'];
-                            $nome = $registros['nomeClientes'];
-                            $email = $registros['emailClientes'];
-                            $telefone = $registros['telefoneClientes'];
-                            $areadeatuaçaoFuncionarios = $registros['areadeatuacaoClientes'];
+                            $id = $registros['idDOU'];
+                            $id_cliente = $registros['idCliente'];
+                            $id_funcionario = $registros['idFuncionario'];
+                            $id_ultimo_funcionario = $registros['idUltimoFuncionario'];
+                            $data = $registros['dataUpload'];
+                            $date=date_create("$data");
+                            $data = date_format($date,"d/m/Y");
+                            $nome_cliente = $registros['nomeCliente'];
+                            $nome_funcionario = $registros['nomeFuncionario'];
                             echo '<tr>';
-                            echo "<td>".$nome."</td>";
-                            echo '<td>'.$email.'</td>';
-                            echo '<td>'.$telefone.'</td>';
-                            echo '<td class="mailbox-subject"><b>'.$areadeatuaçaoFuncionarios.'</b></td>';
+                            echo "<td>".$data."</td>";
+                            echo '<td>'.$nome_cliente.'</td>';
+                            echo '<td>'.$nome_funcionario.'</td>';
                             ?>
                             <td>
                               <div class='item_lista'>
-                                <span class="fa fa-eye item_lista" data-toggle="modal" data-target="#seeModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>">
-                                </span>
+                                <a href="../../../sistema/php/apresentaDados/dou/uploads/<?php echo $registros['arquivo']; ?>" target="_blank" style="color:black"><span class="fa fa-eye item_lista"></span></a>
                               </div>
                             </td>
                             <td>
@@ -124,6 +131,7 @@
                 <!-- /.row -->
               
     </section>
+
 </div>
     <?php include '../../arquivos-include/rodape.php';?>
 </div>

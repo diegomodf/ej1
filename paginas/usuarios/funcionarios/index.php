@@ -12,322 +12,114 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     
+
     <section class="content container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                </div>
-                <div class="col-md-4">
-                </div>
-            </div>
-        </div>
-        
-        <div class="box">
-        
-          <div class="box-header with-border" style="padding:15px;">
-            <h3 class="box-title">Última leitura do DOU</h3>  
-            <div class="box-tools pull-right">
-            <button class="btn btn-success" type="button" data-toggle="modal" data-target="#addModal">Incluir nova leitura</button>  
-            <!-- /.box-tools -->
-          </div>
-          
-              <div class="box-body">
-              <table class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Última atualização</th>
-                  <th>Responsável</th>
-                  <th>Editar</th>
-                  <th>Visualizar</th>
-                </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>12/12/12</td>
-                    <td>06:20</td>
-                    <td>Exemplo</td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-eye item_lista" data-toggle="modal" data-target="#seeModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-                </table>
-              </div>
-          </div>
-
-
-
-
-
-  <!-- COLO OS ARQUIVOS DA PÁGINA DO PROJETO AQUI!!! -->
-    <section class="content container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                </div>
-                <div class="col-md-4">
-                </div>
-            </div>
-        </div>
-        
-        <div class="box">
-        
-          <div class="box-header with-border" style="padding:15px;">
-            <h3 class="box-title">Histórico de leitura do DOU</h3>  
-            <div class="box-tools pull-right">
-            <!-- /.box-tools -->
-          </div>
-          
-              <div class="box-body">
-              <table id="tabela" class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Última atualização</th>
-                  <th>Responsável</th>
-                  <th>Editar</th>
-                  <th>Visualizar</th>
-                </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>12/12/12</td>
-                    <td>06:20</td>
-                    <td>Exemplo</td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-eye item_lista" data-toggle="modal" data-target="#seeModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12/12/12</td>
-                    <td>06:20</td>
-                    <td>Exemplo</td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-eye item_lista" data-toggle="modal" data-target="#seeModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12/12/12</td>
-                    <td>06:20</td>
-                    <td>Exemplo</td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-eye item_lista" data-toggle="modal" data-target="#seeModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12/12/12</td>
-                    <td>06:20</td>
-                    <td>Exemplo</td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-eye item_lista" data-toggle="modal" data-target="#seeModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12/12/12</td>
-                    <td>06:20</td>
-                    <td>Exemplo</td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-eye item_lista" data-toggle="modal" data-target="#seeModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12/12/12</td>
-                    <td>06:20</td>
-                    <td>Exemplo</td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class='item_lista'>
-                        <span class="fa fa-eye item_lista" data-toggle="modal" data-target="#seeModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>" data-whatevernome="<?php echo $registros['nome']; ?>" data-whateverdetalhes="<?php echo $registros['email']; ?>" data-whatevertel="<?php echo $registros['telefone']; ?>" data-whatevercpf="<?php echo $registros['cpf']; ?>" data-whateversexo="<?php echo $registros['sexo']; ?>" data-whatevernasc="<?php echo date('d/m/Y', strtotime($registros['nascimento'])); ?>" data-whatevercep="<?php echo $registros['cep']; ?>" data-whateverrua="<?php echo $registros['rua']; ?>" data-whatevernumero="<?php echo $registros['numero']; ?>" data-whatevercomp="<?php echo $registros['complemento']; ?>" data-whateverbairro="<?php echo $registros['bairro']; ?>" data-whatevercity="<?php echo $registros['cidade']; ?>" data-whateveruf="<?php echo $registros['uf']; ?>" data-whatevertelfuncao="<?php echo $registros['funcao']; ?>" data-whateveringresso="<?php echo date('d/m/Y', strtotime($registros['ingresso'])); ?>" data-whateverfav1="<?php echo $registros['favorecido1']; ?>" data-whateverbanco1="<?php echo $registros['banco1']; ?>" data-whateveragencia1="<?php echo $registros['agencia1']; ?>" data-whateverconta1="<?php echo $registros['conta1']; ?>" data-whatevertipo1="<?php echo $registros['tipo_conta1']; ?>" data-whateverfav2="<?php echo $registros['favorecido2']; ?>" data-whateverbanco2="<?php echo $registros['banco2']; ?>" data-whateveragencia2="<?php echo $registros['agencia2']; ?>" data-whateverconta2="<?php echo $registros['conta2']; ?>" data-whatevertipo2="<?php echo $registros['tipo_conta2']; ?>">
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-              </tbody>
-            </table>            
-                    
-                  
-                  <!-- MODAL DE EDIÇÃO -->
-            <div id="exampleModal" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Atualizar Dados</h4>
+              <div class="box">
+                <div class="box-header with-border" style="padding:15px;">
+                  <h3 class="box-title">Editar Cadastro de Funcionários</h3>
+                  <div class="box-tools pull-right">
+                    <a href="../../cadastro/funcionarios/index.php"><button class="btn btn-success">Cadastrar Novo(a) Funcionário(a)</button></a>
+                    <!-- /.box-tools -->
                   </div>
-                  <div class="modal-body">
-                    <div class="box">
-                  <!-- /.box-header -->
-                      <form action="../../../sistema/php/apresentaDados/funcionario/alter.php" method="POST"> 
-                      <div class="box-body">
-                        <div class="row">
-                          <div class="form-group col-lg-12">
-                          <h5>Novo arquivo</h5>
-                              <input type="text" name= "nome" class="form-control" placeholder="ARQUIVO">
-                          </div>
-                    
-                        </div>
-                      </div>
-                    
-                      <div class="modal-footer">
-                        <input type="submit" class="btn btn-alert" value="Cancelar" name="submit">
-                        <input type="submit" class="btn btn-primary" value="Atualizar Entrega" name="submit">
-                      </div>
-
-                    </form>
-                    </div>   
-                  </div>
-                  
-                </div>
-                  
-              </div>
-                
-            </div>
-                  
-            <!-- MODAL DE Adição -->
-            <div id="addModal" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Adicionar Leitura</h4>
-                  </div>
-                  <div class="modal-body">
-                  <div class="box">
-                  <!-- /.box-header -->
-                  <div class="col-xl-9"> 
-                  <div class="form-group">
-                  <form action="../../../sistema/php/apresentaDados/dou/insert.php" method="POST">
-                    <form action="select.php">
-                      <h5>Nome do Cliente</h5>
-                        <select class="form-control" name="nome_cliente">
-                          <option value="">Selecione...</option>
-                            <?php 
-                              require_once('../../../sistema/php/conectaBd/index.php');
-                              $objDb = new db();
-                              $link = $objDb->conecta_mysql();
-                              $sql = " SELECT * FROM clientes";
-                              $resultado_ids = mysqli_query($link, $sql);
-                              if($resultado_ids){
-                              while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
-                              echo '<option value="'.$registros['nomeClientes'].'">'.$registros['nomeClientes'].'</option>';
-                                }
-                              }else{
-                                echo 'Erro na consulta dos emails no banco de dados!';
-                              }
+                  <div class="box-body">
+                    <table id="tabela" class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Nome</th>
+                          <th>E-mail</th>
+                          <th>Área de atuação</th>
+                          <th>Visualizar</th>
+                          <th>Editar</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        require_once('../../../sistema/php/conectaBd/index.php');
+                        $objDb = new db();
+                        $link = $objDb->conecta_mysql();
+                        $sql = " SELECT * FROM Funcionarios";
+                        $resultado_ids = mysqli_query($link, $sql);
+                        if($resultado_ids){
+                          while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
+                            $id = $registros['idFuncionarios'];
+                            $nome = $registros['nomeFuncionarios'];
+                            $email = $registros['emailFuncionarios'];
+                            $areadeatuaçaoFuncionarios = $registros['areadeatuaçãoFuncionarios'];
+                            echo '<tr>';
+                            echo "<td>".$nome."</td>";
+                            echo '<td>'.$email.'</td>';
+                            echo '<td class="mailbox-subject"><b>'.$areadeatuaçaoFuncionarios.'</b></td>';
                             ?>
-                        </select>
-                        <h5>Nome do Funcionário</h5>
-                        <select class="form-control" name="nome_func">
-                          <option value="">Selecione...</option>
-                            <?php 
-                              require_once('../../../sistema/php/conectaBd/index.php');
-                              $objDb = new db();
-                              $link = $objDb->conecta_mysql();
-                              $sql = " SELECT * FROM funcionarios";
-                              $resultado_ids = mysqli_query($link, $sql);
-                              if($resultado_ids){
-                                while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
-                                  echo '<option value="'.$registros['nomeFuncionarios'].'">'.$registros['nomeFuncionarios'].'</option>';
-                                }
-                              }else{
-                                echo 'Erro na consulta dos funcionários no banco de dados!';
-                              }
-                              ?>
-                          </select>
-                          <div class="row">
-                            <div class="form-group col-lg-4">
-                              <h5>Selecionar arquivo</h5>
-                                <input type="file" name= "arquivo">
-                            </div>
-                            <div class="modal-footer">
-                              <input type="submit" class="btn btn-alert" value="Cancelar" name="submit">
-                              <input type="submit" class="btn btn-primary" value="Confirmar" name="submit">
-                            </div>
-                          </div> 
-                    </form>
-                    </form> 
-                  </div>
-                  </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-                
-            </div>
-                  
-                  
-                  
-                  
-                  
-                
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
+                            <td>
+                              <div class='item_lista'>
+                                <span class="fa fa-eye item_lista" data-toggle="modal" data-target="#seeModal" data-whateverid="<?php echo $registros['idfuncionario']; ?>">
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div class='item_lista'>
+                                <span class="fa fa-edit item_lista" data-toggle="modal" data-target="#exampleModal" data-whateverid="<?php echo $registros['idfuncionario'];?>">
+                                </span>
+                              </div>
+                            </td>
+                            
+                            <?php
+                            echo '</tr>';
+                          }
+                        }else{
+                          echo 'Erro na consulta dos emails no banco de dados!';
+                        }
+                        ?>
+                      </tbody>
+                    </table>
 
-      <!-- /.row -->
-  </section>        
 
+                    <!-- MODAL DE EDIÇÃO -->
+                    <div id="exampleModal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Atualizar Dados</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="box">
+                              <!-- FORMS -->
+                              
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <div id="seeModal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Visualizar Dados</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="box">
+                              <!-- FORMS -->
+                              
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+                <!-- /.row -->
+              
     </section>
 </div>
     <?php include '../../arquivos-include/rodape.php';?>

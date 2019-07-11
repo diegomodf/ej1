@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['nome']) || !isset($_SESSION['email']) || !isset($_SESSION['funcao'])){
+    if(!isset($_SESSION['nome'])){
         header('Location: ../../../index.php?erro=1');    
     }
 ?>
@@ -46,48 +46,59 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border" style="padding:15px;">
-            <h5 class="box-title">Cadastrar Novo(a) Cliente</h5>
+            <h5 class="box-title">Cadastrar Nova Leitura de DOU</h5>
               <!-- /.box-tools -->
             </div> 
             <!-- /.box-header -->
-              <form action="../../../sistema/php/apresentaDados/clientes/insert.php" method="POST">
+              <form action="../../../sistema/php/apresentaDados/dou/insert.php" method="POST" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="row">
-                  <div class="form-group col-lg-6">
-                  <h5>Nome do(a) Cliente</h5>
-                      <input type="text" name= "nome" class="form-control" placeholder="Nome" required>
+                  <div class="form-group col-lg-4">
+                  <h5>Cliente</h5>
+                    <select class="form-control" name="cliente" id="cliente" required>
+                      <option value="">Selecione...</option>
+                        <?php 
+                          require_once('../../../sistema/php/conectaBd/index.php');
+                          $objDb = new db();
+                          $link = $objDb->conecta_mysql();
+                          $sql = " SELECT * FROM Clientes";
+                          $resultado_ids = mysqli_query($link, $sql);
+                          if($resultado_ids){
+                          while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
+                          echo '<option value="'.$registros['idClientes'].'">'.$registros['nomeClientes'].'</option>';
+                            }
+                          }else{
+                            echo 'Erro na consulta dos emails no banco de dados!';
+                          }
+                        ?>
+                    </select>
                   </div>
-                  <div class="form-group col-lg-6">
-                        <h5>CNPJ/CPF</h5>
-                    <input name="cnpj" type="text" class="form-control" placeholder="CNPJ/CPF" maxlength="25" >
+                  <div class="form-group col-lg-4">
+                    <h5>Funcionário</h5>
+                    <select class="form-control" name="funcionario" id="funcionario" required>
+                      <option value="">Selecione...</option>
+                        <?php 
+                          require_once('../../../sistema/php/conectaBd/index.php');
+                          $objDb = new db();
+                          $link = $objDb->conecta_mysql();
+                          $sql = " SELECT * FROM Funcionarios";
+                          $resultado_ids = mysqli_query($link, $sql);
+                          if($resultado_ids){
+                          while($registros = mysqli_fetch_array($resultado_ids, MYSQLI_ASSOC)){
+                          echo '<option value="'.$registros['idFuncionarios'].'">'.$registros['nomeFuncionarios'].'</option>';
+                            }
+                          }else{
+                            echo 'Erro na consulta dos emails no banco de dados!';
+                          }
+                        ?>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <input type="hidden" name="enviou" value="1">
+                    <h5>Arquivo PDF</h5>
+                    <input type="file" name="arquivo">
                   </div>
                 </div>
-                <div class="row">
-                   <div class="form-group col-lg-6">
-                  <h5>Email</h5>
-                      <input type="email" name= "email" class="form-control" placeholder="Email" required>
-                  </div>
-                  <div class="form-group col-lg-6">
-                  <h5>Telefone</h5>
-                    <input name="telefone" type="text" class="form-control" placeholder="Telefone" OnKeyPress="formatar('## #####-####', this)" maxlength="13" required>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="form-group col-lg-12">
-                  <h5>Endereço Completo</h5>
-                    <input name="endereco" type="text" id="endereco" size="90" class="form-control" placeholder="Endereço Completo">
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="form-group col-lg-6">
-                    <h5>Área de Atuação</h5>
-                      <input type="text" name= "areadeatuacao" class="form-control" placeholder="Área de Atuação" required>
-                  </div>
-                  <div class="form-group col-lg-6">
-                    <h5>Senha</h5>
-                      <input type="password" name= "senha" class="form-control" placeholder="Senha" required>
-                  </div>
-              </div>
               
               <div class="modal-footer">
                   <a href="../../usuarios/clientes/index.php">

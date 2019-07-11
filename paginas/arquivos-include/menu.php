@@ -72,8 +72,8 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li><a href="../../salas/salas/index.php"><i class="fa fa-user"></i> <span>Clientes</span></a></li>
-      <li><a href="../../salas/salas/index.php"><i class="fa fa-home"></i> <span>Funcionários</span></a></li>        
+      <li><a href="../../usuarios/clientes/index.php"><i class="fa fa-user"></i> <span>Clientes</span></a></li>
+      <li><a href="../../usuarios/funcionarios/index.php"><i class="fa fa-home"></i> <span>Funcionários</span></a></li>        
       <li class="treeview">
         <a href="#"><i class="fa fa-list"></i> <span>Documentos</span>
               <span class="pull-right-container">
@@ -82,7 +82,7 @@
             </a>
         <ul class="treeview-menu">
           <li><a href="../../relatorios/pagamentos/index.php">Última leitura do DOU</a></li>
-           <li><a href="../../relatorios/indicadores/">Leituras do DOU</a></li>
+           <li><a href="../../dou/dou/index.php">Leituras do DOU</a></li>
         </ul>
       </li>      
     </ul>

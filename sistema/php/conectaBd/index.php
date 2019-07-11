@@ -5,7 +5,7 @@ class db{
     private $host ='localhost';
     private $usuario ='root';
     private $senha ='';
-    private $database ='ej1_bd';
+    private $database ='EJ1_BD';
      
     public function conecta_mysql(){
         //Cria conexão

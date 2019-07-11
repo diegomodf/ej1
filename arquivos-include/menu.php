@@ -84,7 +84,7 @@
               </span>
             </a>
         <ul class="treeview-menu">
-          <li><a href="../../usuarios/pacientes/index.php">Paciente</a></li>
+          <li><a href="../../usuarios/pacientes/index.php /opt/lampp/htdocs/ej1/paginas/usuarios/funcionarios/index.php">Paciente</a></li>
           <li><a href="../../usuarios/funcionarios/index.php">Funcionários(as)</a></li>
           <li><a href="../../usuarios/profissionais/index.php">Profissionais</a></li>
         </ul> <!--Parte de Usuários-->
