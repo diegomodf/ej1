@@ -17,9 +17,9 @@
             if(isset($dados_usuario['emailFuncionarios'])){
                 $_SESSION['email'] = $dados_usuario['emailFuncionarios'];
                 $_SESSION['nome'] = $dados_usuario['nomeFuncionarios'];
-                header('Location: ../../../paginas/dou/dou');
+                header('Location: ../../../paginas/usuarios/funcionarios');
             }else{
-                //header('Location: ../../../index_funcionarios.php?erro=1');
+                header('Location: ../../../index_funcionarios.php?erro=1');
             }
         }
     }else{
